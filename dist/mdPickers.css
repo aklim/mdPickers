@@ -335,7 +335,7 @@ mdp-calendar {
   width: 309px;
 }
 .mdp-timepicker .mdp-timepicker-time {
-  padding: 15px;
+  padding: 15px !important;
 }
 .mdp-timepicker .mdp-timepicker-selected-time {
   font-size: 3rem;

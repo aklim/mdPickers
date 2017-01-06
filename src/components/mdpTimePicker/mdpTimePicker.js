@@ -217,7 +217,7 @@ module.provider("$mdpTimePicker", function () {
             return $mdDialog.show({
                 controller:          ['$scope', '$mdDialog', 'time', 'autoSwitch', '$mdMedia', TimePickerCtrl],
                 controllerAs:        'timepicker',
-                clickOutsideToClose: true,
+                clickOutsideToClose: false,
                 template:            '<md-dialog aria-label="" class="mdp-timepicker" ng-class="{ \'portrait\': !$mdMedia(\'gt-xs\') }">' +
                                      '<md-dialog-content layout-gt-xs="row" layout-wrap>' +
                                      '<md-toolbar layout-gt-xs="column" layout-xs="row" layout-align="center center" flex class="mdp-timepicker-time md-hue-1 md-primary">' +
@@ -233,7 +233,7 @@ module.provider("$mdpTimePicker", function () {
                                      '<div>' +
                                      '<div class="mdp-clock-switch-container" ng-switch="timepicker.currentView" layout layout-align="center center">' +
                                      '<mdp-clock class="mdp-animation-zoom" auto-switch="timepicker.autoSwitch" time="timepicker.time" type="hours" ng-switch-when="1"></mdp-clock>' +
-                                     '<mdp-clock class="mdp-animation-zoom" auto-switch="timepicker.autoSwitch" time="timepicker.time" type="minutes" ng-switch-when="2"></mdp-clock>' +
+                                     '<mdp-clock class="mdp-animation-zoom" auto-switch="false" time="timepicker.time" type="minutes" ng-switch-when="2"></mdp-clock>' +
                                      '</div>' +
 
                                      '<md-dialog-actions layout="row">' +
