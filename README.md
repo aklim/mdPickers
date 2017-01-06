@@ -18,7 +18,7 @@ Material Design date/time pickers built with Angular Material and Moment.js
 Install via Bower:
 
 ```bash
-bower install mdPickers
+bower install mdDateTimePickers
 ```
 
 Use in Angular:
