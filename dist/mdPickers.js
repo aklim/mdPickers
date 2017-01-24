@@ -328,12 +328,13 @@ module.directive("mdpTimePicker", ["$mdpTimePicker", "$timeout", function ($mdpT
         template:   function (element, attrs) {
             var noFloat = angular.isDefined(attrs.mdpNoFloat),
                 placeholder = angular.isDefined(attrs.mdpPlaceholder) ? attrs.mdpPlaceholder : "",
+                icon = angular.isDefined(attrs.mdpIcon) ? attrs.mdpIcon : "mdp-access-time",
                 openOnClick = angular.isDefined(attrs.mdpOpenOnClick) ? true : false;
 
             return '<div layout layout-align="start start">' +
                 '<md-button class="md-icon-button" ng-click="showPicker($event)"' +
                 (angular.isDefined(attrs.mdpDisabled) ? ' ng-disabled="disabled"' : '') + '>' +
-                '<md-icon md-svg-icon="mdp-access-time"></md-icon>' +
+                '<md-icon md-svg-icon="' + icon +'"></md-icon>' +
                 '</md-button>' +
                 '<md-input-container' + (noFloat ? ' md-no-float' : '') + ' md-is-error="isError()">' +
                 '<input type="{{ ::type }}"' + (angular.isDefined(attrs.mdpDisabled) ? ' ng-disabled="disabled"' : '') +
@@ -346,7 +347,8 @@ module.directive("mdpTimePicker", ["$mdpTimePicker", "$timeout", function ($mdpT
             "timeFormat":  "@mdpFormat",
             "placeholder": "@mdpPlaceholder",
             "autoSwitch":  "=?mdpAutoSwitch",
-            "disabled":    "=?mdpDisabled"
+            "disabled":    "=?mdpDisabled",
+            "icon":        "@mdpIcon"
         },
         link:       function (scope, element, attrs, ngModel, $transclude) {
             var inputElement = angular.element(element[0].querySelector('input')),
